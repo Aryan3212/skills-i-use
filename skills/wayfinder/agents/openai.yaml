@@ -1,0 +1,6 @@
+interface:
+  display_name: "Wayfinder"
+  short_description: "Find a direction for a foggy effort"
+  default_prompt: "Use $wayfinder to refine this broad idea before we write a spec."
+policy:
+  allow_implicit_invocation: false

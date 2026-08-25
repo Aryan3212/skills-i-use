@@ -1,0 +1,6 @@
+interface:
+  display_name: "TS OxLint Anti-Slop"
+  short_description: "Install TypeScript OxLint anti-slop rules"
+  default_prompt: "Use $ts-oxlint-anti-slop to install or update these TypeScript OxLint rules."
+policy:
+  allow_implicit_invocation: false

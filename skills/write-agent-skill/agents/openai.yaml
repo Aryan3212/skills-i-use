@@ -1,0 +1,6 @@
+interface:
+  display_name: "Write Agent Skill"
+  short_description: "Create, revise, or audit an agent skill"
+  default_prompt: "Use $write-agent-skill to create, revise, or audit this agent skill."
+policy:
+  allow_implicit_invocation: false

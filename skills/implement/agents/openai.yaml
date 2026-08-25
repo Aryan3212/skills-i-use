@@ -1,0 +1,6 @@
+interface:
+  display_name: "Implement"
+  short_description: "Implement one approved task carefully"
+  default_prompt: "Use $implement to complete this approved task and update durable feature documentation when behavior or contracts change."
+policy:
+  allow_implicit_invocation: true

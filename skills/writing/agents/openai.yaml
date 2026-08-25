@@ -1,0 +1,6 @@
+interface:
+  display_name: "Writing"
+  short_description: "Write clear, natural prose"
+  default_prompt: "Use $writing to draft or revise this for its intended reader."
+policy:
+  allow_implicit_invocation: true

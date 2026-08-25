@@ -1,0 +1,6 @@
+interface:
+  display_name: "To Spec"
+  short_description: "Create durable feature or module docs"
+  default_prompt: "Use $to-spec to turn our confirmed intent into one durable, colocated feature document."
+policy:
+  allow_implicit_invocation: true

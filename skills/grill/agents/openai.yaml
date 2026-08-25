@@ -1,0 +1,6 @@
+interface:
+  display_name: "Grill"
+  short_description: "Stress-test an idea or plan together"
+  default_prompt: "Use $grill to clarify and stress-test this idea before we write a spec."
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Explain This"
+  short_description: "Walk through completed agent work"
+  default_prompt: "Use $explain-this to help me understand this completed work before I inspect it."
+policy:
+  allow_implicit_invocation: true
