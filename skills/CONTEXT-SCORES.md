@@ -10,13 +10,13 @@ Local files explicitly linked from a `SKILL.md` are counted recursively in that 
 
 ## Startup baseline
 
-Startup semantic words: 125 across 8 auto-available skills.
+Startup semantic words: 173 across 9 auto-available skills.
 
 ## Totals across separate files
 
-- All `SKILL.md` files: 7333 words across 16 files.
-- Linked local reference files: 324 words across 1 files.
-- All on-demand instructional files: 7657 words across 17 files. This is a repository total, not a single conversation's context.
+- All `SKILL.md` files: 8009 words across 17 files.
+- Linked local reference files: 1473 words across 2 files.
+- All on-demand instructional files: 9482 words across 19 files. This is a repository total, not a single conversation's context.
 
 ## Per-skill cost
 
@@ -36,6 +36,7 @@ Startup semantic words: 125 across 8 auto-available skills.
 | `to-tickets` | Yes | 15 | 346 | 0 | 346 | — | `implement`, `to-spec`, `writing` |
 | `ts-oxlint-anti-slop` | No | 0 | 735 | 0 | 735 | — | — |
 | `wayfinder` | No | 0 | 288 | 0 | 288 | — | `grill`, `research`, `to-spec` |
+| `wizard` | Yes | 48 | 676 | 1149 | 1825 | skills/wizard/template.sh (1149) | — |
 | `write-agent-skill` | No | 0 | 1135 | 0 | 1135 | — | `writing` |
 | `writing` | Yes | 16 | 353 | 0 | 353 | — | — |
 
@@ -57,6 +58,8 @@ Startup semantic words: 125 across 8 auto-available skills.
 | `skills/to-tickets/SKILL.md` | 346 | `to-tickets` is invoked |
 | `skills/ts-oxlint-anti-slop/SKILL.md` | 735 | `ts-oxlint-anti-slop` is invoked |
 | `skills/wayfinder/SKILL.md` | 288 | `wayfinder` is invoked |
+| `skills/wizard/SKILL.md` | 676 | `wizard` is invoked |
 | `skills/write-agent-skill/SKILL.md` | 1135 | `write-agent-skill` is invoked |
 | `skills/writing/SKILL.md` | 353 | `writing` is invoked |
 | `skills/project-skill-bootstrapper/references/candidate-review.md` | 324 | linked from `project-skill-bootstrapper` |
+| `skills/wizard/template.sh` | 1149 | linked from `wizard` |
