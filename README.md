@@ -70,35 +70,42 @@ In short, the workflow is:
 
 This is mostly the same workflow people wrote about before AI. The tools changed; the need to manage context, verify work, and understand the result did not.
 
+## Using this repository
+
+This repository is reference material for setting up my local agents, not a set of project-specific instructions. The `skills/` directory contains the skills I install into an agent's local skill directory as needed.
+
+[`codex-global-instructions.md`](codex-global-instructions.md) is the repository reference for my global Codex `~/.codex/AGENTS.md`. It is deliberately not named `AGENTS.md` here because Codex would otherwise treat it as instructions for this repository. When these references change, I sync [`codex-global-instructions.md`](codex-global-instructions.md), [`ast-grep.md`](ast-grep.md), and [`ast-grep-rule-reference.md`](ast-grep-rule-reference.md) to their matching filenames under `~/.codex/`. The global instructions keep RTK and Semble available generally, while ast-grep is loaded only for software-engineering work.
+
 ## Skill catalog
 
 “Auto-available” skills may be considered by an agent from their description. “Manual-only” skills require an explicit `$skill-name` invocation and do not enter the normal agent context.
 
 Core skills do not automatically install or load specialist skills. When a language, framework, platform, or risk area needs more focused guidance, they name the one useful capability and why; I decide whether to add or invoke it.
 
-| Skill | Availability | Required input | Conditional helper or dependency | Typical next step |
-| --- | --- | --- | --- | --- |
-| `grill` | Manual-only | Raw idea, plan, or decision | `research` for unanswered facts | `to-spec` |
-| `wayfinder` | Manual-only | Confirmed but broad intent | `grill`; `research` for factual unknowns | `to-spec` |
-| `research` | Auto-available | Bounded factual question | — | Returns evidence to the calling skill |
-| `to-spec` | Auto-available | Confirmed intent | `grill` when a material decision remains; `research` for factual unknowns | `to-tickets` |
-| `to-tickets` | Auto-available | Approved feature or module document | `to-spec` | `implement` |
-| `implement` | Auto-available | Approved task and acceptance conditions; owning document when present | Explicitly invokes manual-only `tdd` for coding tasks unless I opt out; names a focused specialist capability only when it materially helps | I may request a walkthrough or review |
-| `tdd` | Manual-only | A coding task or bug fix | Invoked by `implement` for coding tasks; `debug` supplies a reproduction for fixes | Returns to implementation |
-| `debug` | Auto-available | Reported symptom or failing signal | `research` only for unfamiliar external behavior; recommends specialist help only when it materially sharpens diagnosis | `implement` when a fix is requested; `code-review` after a fix |
-| `explain-this` | Auto-available | Completed code, writing, or research artifact | — | Human inspection; separate review only when requested |
-| `code-review` | Manual-only | Completed diff plus intended behavior where available | Recommends a focused specialist capability only when needed; I choose whether to research, add, or invoke it | Final verification or follow-up task |
-| `handoff` | Auto-available | Current work state and evidence | — | Named next skill or human action |
-| `writing` | Auto-available | Draft or existing prose and its intended audience | `research` for claims that need evidence | Validate factual claims and reader intent |
-| `write-agent-skill` | Manual-only | Skill idea or existing skill plus its intended use | — | Use the skill; revise only from observed needs |
-| `ts-oxlint-anti-slop` | Manual-only | TypeScript repository using OxLint | — | `code-review` or implementation verification |
-| `thermo-nuclear-code-quality-review` | Manual-only | Broad or high-risk completed change | — | `code-review` findings or follow-up work |
+| Skill | Availability | Use case | Required input | Conditional helper or dependency | Typical next step |
+| --- | --- | --- | --- | --- | --- |
+| `grill` | Manual-only | Clarify hidden requirements and decisions before specification or implementation begins. | Raw idea, plan, or decision | `research` for unanswered facts | `to-spec` |
+| `wayfinder` | Manual-only | Compare plausible directions when broad intent is confirmed but destination remains unclear. | Confirmed but broad intent | `grill`; `research` for factual unknowns | `to-spec` |
+| `research` | Auto-available | Resolve bounded factual questions using repository evidence or authoritative primary sources. | Bounded factual question | — | Returns evidence to the calling skill |
+| `to-spec` | Auto-available | Turn confirmed intent into one concise, durable implementation-ready feature document. | Confirmed intent | `grill` when a material decision remains; `research` for factual unknowns | `to-tickets` |
+| `to-tickets` | Auto-available | Break an approved specification into dependency-aware, independently verifiable implementation tasks. | Approved feature or module document | `to-spec` | `implement` |
+| `implement` | Auto-available | Complete one approved task with minimal changes and proportionate verification. | Approved task and acceptance conditions; owning document when present | Explicitly invokes manual-only `tdd` for coding tasks unless I opt out; names a focused specialist capability only when it materially helps | I may request a walkthrough or review |
+| `tdd` | Manual-only | Implement observable behavior through focused red-green-refactor cycles at stable seams. | A coding task or bug fix | Invoked by `implement` for coding tasks; `debug` supplies a reproduction for fixes | Returns to implementation |
+| `debug` | Auto-available | Reproduce unexpected behavior, establish its root cause, then fix when authorized. | Reported symptom or failing signal | `research` only for unfamiliar external behavior; recommends specialist help only when it materially sharpens diagnosis | `implement` when a fix is requested; `code-review` after a fix |
+| `explain-this` | Auto-available | Teach back completed agent work accurately before human acceptance or review. | Completed code, writing, or research artifact | — | Human inspection; separate review only when requested |
+| `code-review` | Manual-only | Assess completed changes for evidence-backed defects without silently modifying the code. | Completed diff plus intended behavior where available | Recommends a focused specialist capability only when needed; I choose whether to research, add, or invoke it | Final verification or follow-up task |
+| `handoff` | Auto-available | Create a concise evidence-backed brief for pausing or transferring unfinished work. | Current work state and evidence | — | Named next skill or human action |
+| `writing` | Auto-available | Draft or revise reader-facing prose for its actual audience and purpose. | Draft or existing prose and its intended audience | `research` for claims that need evidence | Validate factual claims and reader intent |
+| `write-agent-skill` | Manual-only | Create, revise, or statically review focused reusable instructions for agents. | Skill idea or existing skill plus its intended use | — | Use the skill; revise only from observed needs |
+| `project-skill-bootstrapper` | Manual-only | Plan the smallest specialized capability portfolio needed for a project. | Project or body of work plus intended outcomes | `grill`; `find-skills` and web search for discovery; `write-agent-skill` for proposed local skill work | Human portfolio decision, then implementation by another agent |
+| `ts-oxlint-anti-slop` | Manual-only | Install or migrate bundled Oxlint anti-slop rules in TypeScript repositories. | TypeScript repository using OxLint | — | `code-review` or implementation verification |
+| `thermo-nuclear-code-quality-review` | Manual-only | Perform an unusually strict maintainability review for structural code problems. | Broad or high-risk completed change | — | `code-review` findings or follow-up work |
 
 The origin and local adaptation of imported skills are recorded in [`skills/PROVENANCE.md`](skills/PROVENANCE.md). Their measured context costs are recorded in [`skills/CONTEXT-SCORES.md`](skills/CONTEXT-SCORES.md).
 
 ## Supporting CLI tools
 
-Three tools sit around the agent rather than acting as skills. Their instructions live in my global `AGENTS.md` so the agent knows when to use them.
+Three tools sit around the agent rather than acting as skills. My global `AGENTS.md` contains the Semble guidance and eagerly loads the RTK guidance; it points to `ast-grep.md` only when the agent is doing software-engineering work.
 
 - **Semble** is a semantic codebase indexer and retriever. It uses embeddings to find relevant code even when my wording does not exactly match the codebase's vocabulary. That may help the agent retrieve better context, although I have not independently evaluated it.
 - **ast-grep** searches code by syntax and structure rather than text alone. I also use its outline command to get a compact map of a file before reading the implementation.

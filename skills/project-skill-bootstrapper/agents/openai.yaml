@@ -1,0 +1,6 @@
+interface:
+  display_name: "Project Skill Bootstrapper"
+  short_description: "Plan a minimal project capability portfolio"
+  default_prompt: "Use $project-skill-bootstrapper to assess this project and propose the minimum useful capability portfolio."
+policy:
+  allow_implicit_invocation: false

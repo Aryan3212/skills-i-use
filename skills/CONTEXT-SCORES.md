@@ -14,9 +14,9 @@ Startup semantic words: 125 across 8 auto-available skills.
 
 ## Totals across separate files
 
-- All `SKILL.md` files: 6167 words across 15 files.
-- Linked local reference files: 0 words across 0 files.
-- All on-demand instructional files: 6167 words across 15 files. This is a repository total, not a single conversation's context.
+- All `SKILL.md` files: 7333 words across 16 files.
+- Linked local reference files: 324 words across 1 files.
+- All on-demand instructional files: 7657 words across 17 files. This is a repository total, not a single conversation's context.
 
 ## Per-skill cost
 
@@ -28,6 +28,7 @@ Startup semantic words: 125 across 8 auto-available skills.
 | `grill` | No | 0 | 435 | 0 | 435 | — | `to-spec` |
 | `handoff` | Yes | 20 | 196 | 0 | 196 | — | `writing` |
 | `implement` | Yes | 13 | 354 | 0 | 354 | — | `tdd` |
+| `project-skill-bootstrapper` | No | 0 | 1166 | 324 | 1490 | skills/project-skill-bootstrapper/references/candidate-review.md (324) | `find-skills`, `grill`, `write-agent-skill` |
 | `research` | Yes | 17 | 255 | 0 | 255 | — | — |
 | `tdd` | No | 0 | 280 | 0 | 280 | — | `implement` |
 | `thermo-nuclear-code-quality-review` | No | 0 | 248 | 0 | 248 | — | — |
@@ -48,6 +49,7 @@ Startup semantic words: 125 across 8 auto-available skills.
 | `skills/grill/SKILL.md` | 435 | `grill` is invoked |
 | `skills/handoff/SKILL.md` | 196 | `handoff` is invoked |
 | `skills/implement/SKILL.md` | 354 | `implement` is invoked |
+| `skills/project-skill-bootstrapper/SKILL.md` | 1166 | `project-skill-bootstrapper` is invoked |
 | `skills/research/SKILL.md` | 255 | `research` is invoked |
 | `skills/tdd/SKILL.md` | 280 | `tdd` is invoked |
 | `skills/thermo-nuclear-code-quality-review/SKILL.md` | 248 | `thermo-nuclear-code-quality-review` is invoked |
@@ -57,3 +59,4 @@ Startup semantic words: 125 across 8 auto-available skills.
 | `skills/wayfinder/SKILL.md` | 288 | `wayfinder` is invoked |
 | `skills/write-agent-skill/SKILL.md` | 1135 | `write-agent-skill` is invoked |
 | `skills/writing/SKILL.md` | 353 | `writing` is invoked |
+| `skills/project-skill-bootstrapper/references/candidate-review.md` | 324 | linked from `project-skill-bootstrapper` |
