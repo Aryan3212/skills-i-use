@@ -5,7 +5,7 @@ description: Use when an approved spec needs sequential, independently shippable
 
 # To Tickets
 
-Turn an approved spec into an implementation sequence; do not reopen specification. Save tickets as Markdown files under `specs/<spec-name>/tickets/`; each ticket references `../spec.md` rather than duplicating its decisions. Keep approval and completion status explicit.
+Turn an approved spec into an implementation sequence; do not reopen specification. Save tickets as Markdown files under `specs/<spec-name>/tickets/`; each ticket references `../<spec-name>.md` rather than duplicating its decisions. Keep approval and completion status explicit.
 
 ## Ground the breakdown
 

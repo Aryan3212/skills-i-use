@@ -11,7 +11,7 @@ Synthesize what is already known; do not restart the interview or create unrelat
 
 ## Locate the document
 
-Use `specs/<spec-name>/spec.md`, with any tickets under `specs/<spec-name>/tickets/`, unless the human specifies another location. Update the active spec for this change when one exists. Keep planning separate from source READMEs and other documentation of the delivered system.
+Use `specs/<spec-name>/<spec-name>.md`, with any tickets under `specs/<spec-name>/tickets/`, unless the human specifies another location. Update the active spec for this change when one exists. Keep planning separate from source READMEs and other documentation of the delivered system.
 
 ## Ground the document in the codebase
 
