@@ -63,4 +63,4 @@ During implementation, obtain human approval for material changes to behavior, s
 
 ## Vocabulary
 
-Maintain very strict vocabulary for the spec as well as the code, especially don't use jargon. Use words that tightly contains the meaning without ambiguity and make sure to use that consistently.
+Maintain very strict vocabulary for the spec as well as the code, especially don't use jargon. Use words that tightly contains the meaning without ambiguity and make sure to use that consistently and document it's usage so that it's clear to anyone reading the spec.
