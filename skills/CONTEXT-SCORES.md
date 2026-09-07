@@ -10,30 +10,30 @@ Local files explicitly linked from a `SKILL.md` are counted recursively in that 
 
 ## Startup baseline
 
-Startup semantic words: 173 across 9 auto-available skills.
+Startup semantic words: 214 across 12 auto-available skills.
 
 ## Totals across separate files
 
-- All `SKILL.md` files: 8009 words across 17 files.
+- All `SKILL.md` files: 8440 words across 17 files.
 - Linked local reference files: 1473 words across 2 files.
-- All on-demand instructional files: 9482 words across 19 files. This is a repository total, not a single conversation's context.
+- All on-demand instructional files: 9913 words across 19 files. This is a repository total, not a single conversation's context.
 
 ## Per-skill cost
 
 | Skill | Auto | Startup words | `SKILL.md` words | Linked-file words | On-demand total | Linked local files | Referenced skills |
 | --- | --- | ---: | ---: | ---: | ---: | --- | --- |
-| `code-review` | No | 0 | 322 | 0 | 322 | — | — |
+| `code-review` | Yes | 13 | 416 | 0 | 416 | — | — |
 | `debug` | Yes | 11 | 318 | 0 | 318 | — | — |
 | `explain-this` | Yes | 17 | 323 | 0 | 323 | — | `writing` |
-| `grill` | No | 0 | 435 | 0 | 435 | — | `to-spec` |
+| `grill` | Yes | 18 | 435 | 0 | 435 | — | `to-spec` |
 | `handoff` | Yes | 20 | 196 | 0 | 196 | — | `writing` |
-| `implement` | Yes | 13 | 354 | 0 | 354 | — | `tdd` |
+| `implement` | Yes | 13 | 538 | 0 | 538 | — | `tdd` |
 | `project-skill-bootstrapper` | No | 0 | 1166 | 324 | 1490 | skills/project-skill-bootstrapper/references/candidate-review.md (324) | `find-skills`, `grill`, `write-agent-skill` |
 | `research` | Yes | 17 | 255 | 0 | 255 | — | — |
-| `tdd` | No | 0 | 280 | 0 | 280 | — | `implement` |
+| `tdd` | Yes | 14 | 389 | 0 | 389 | — | `implement` |
 | `thermo-nuclear-code-quality-review` | No | 0 | 248 | 0 | 248 | — | — |
-| `to-spec` | Yes | 16 | 579 | 0 | 579 | — | `grill`, `implement`, `writing` |
-| `to-tickets` | Yes | 15 | 346 | 0 | 346 | — | `implement`, `to-spec`, `writing` |
+| `to-spec` | Yes | 15 | 556 | 0 | 556 | — | `grill`, `implement`, `writing` |
+| `to-tickets` | Yes | 12 | 413 | 0 | 413 | — | `implement`, `to-spec`, `writing` |
 | `ts-oxlint-anti-slop` | No | 0 | 735 | 0 | 735 | — | — |
 | `wayfinder` | No | 0 | 288 | 0 | 288 | — | `grill`, `research`, `to-spec` |
 | `wizard` | Yes | 48 | 676 | 1149 | 1825 | skills/wizard/template.sh (1149) | — |
@@ -44,18 +44,18 @@ Startup semantic words: 173 across 9 auto-available skills.
 
 | File | Words | Loaded when |
 | --- | ---: | --- |
-| `skills/code-review/SKILL.md` | 322 | `code-review` is invoked |
+| `skills/code-review/SKILL.md` | 416 | `code-review` is invoked |
 | `skills/debug/SKILL.md` | 318 | `debug` is invoked |
 | `skills/explain-this/SKILL.md` | 323 | `explain-this` is invoked |
 | `skills/grill/SKILL.md` | 435 | `grill` is invoked |
 | `skills/handoff/SKILL.md` | 196 | `handoff` is invoked |
-| `skills/implement/SKILL.md` | 354 | `implement` is invoked |
+| `skills/implement/SKILL.md` | 538 | `implement` is invoked |
 | `skills/project-skill-bootstrapper/SKILL.md` | 1166 | `project-skill-bootstrapper` is invoked |
 | `skills/research/SKILL.md` | 255 | `research` is invoked |
-| `skills/tdd/SKILL.md` | 280 | `tdd` is invoked |
+| `skills/tdd/SKILL.md` | 389 | `tdd` is invoked |
 | `skills/thermo-nuclear-code-quality-review/SKILL.md` | 248 | `thermo-nuclear-code-quality-review` is invoked |
-| `skills/to-spec/SKILL.md` | 579 | `to-spec` is invoked |
-| `skills/to-tickets/SKILL.md` | 346 | `to-tickets` is invoked |
+| `skills/to-spec/SKILL.md` | 556 | `to-spec` is invoked |
+| `skills/to-tickets/SKILL.md` | 413 | `to-tickets` is invoked |
 | `skills/ts-oxlint-anti-slop/SKILL.md` | 735 | `ts-oxlint-anti-slop` is invoked |
 | `skills/wayfinder/SKILL.md` | 288 | `wayfinder` is invoked |
 | `skills/wizard/SKILL.md` | 676 | `wizard` is invoked |

@@ -3,4 +3,4 @@ interface:
   short_description: "Review a completed change with evidence"
   default_prompt: "Use $code-review to review this completed change against its intended behavior and repository standards."
 policy:
-  allow_implicit_invocation: false
+  allow_implicit_invocation: true 

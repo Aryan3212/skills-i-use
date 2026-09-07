@@ -5,11 +5,11 @@ description: Use when explicitly requested to assess a completed change for evid
 
 # Code Review
 
-Review is read-only by default. Establish evidence and findings; do not silently rewrite, format, refactor, or otherwise fix the change. An independent reviewer can add perspective when available, but is never required.
+Review is read-only by default. Establish evidence and findings; do not silently rewrite, format, refactor, or otherwise fix the change. Use another agent only when the human requests it.
 
 ## Establish the review set
 
-Identify the fixed point, changed files, relevant commits, and uncommitted changes. Read the task or owning feature/module document when available, plus applicable project instructions, standards, and tests around the changed behavior. If stated intent is unavailable, review against observable behavior and repository standards and say that specification compliance could not be assessed.
+Identify the fixed point, changed files, relevant commits, and uncommitted changes. Read both the ticket and its parent spec (`specs/<spec-name>/spec.md`) when present, plus applicable project instructions, standards, system documentation, and tests around the changed behavior. Read the source directory README, or the nearest ancestor README within the repository if absent, while respecting applicable broader constraints. Completed specs are historical context, not authority over current approved behavior. If stated intent is unavailable, review against observable behavior and repository standards and say that specification compliance could not be assessed.
 
 ## Gather verification evidence
 
@@ -26,6 +26,6 @@ Assess the diff and its surroundings for:
 - repository standards: documented conventions and avoidable complexity;
 - architecture pressure: unjustified abstractions, special cases, coupling, unclear ownership, non-atomic state, or material maintenance cost.
 
-For each finding, state severity, exact evidence, realistic impact, and a concrete remedy. Separate confirmed defects from questions and design judgments. Do not report automated-style nits unless the tool result is wrong, and do not turn suspicions into defects without evidence.
+For each finding, identify the violated requirement, contract, repository rule, or evidenced failure, with severity, exact evidence, realistic impact, and a concrete remedy. Respect approved constraints and non-goals; reopen settled decisions only with new evidence or a failed assumption. A documented decision does not excuse a demonstrated defect. Do not demand extra abstractions or tests without a concrete uncovered risk. Separate confirmed defects from questions and design judgments. Do not report automated-style nits unless the tool result is wrong, and do not turn suspicions into defects without evidence.
 
-Report remaining risks, verification evidence, and intentionally unreviewed areas. Recommend separate follow-up work for justified redesign; do not use review as a pretext for it.
+Report remaining risks, verification evidence, and intentionally unreviewed areas. Recommend separate follow-up work for justified redesign; do not use review as a pretext for it. Leave acceptance and shipping to the human; do not start the next ticket.

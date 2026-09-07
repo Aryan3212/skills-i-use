@@ -11,6 +11,8 @@ Run only when the human explicitly invokes this skill by name. An agent or anoth
 
 The objective is not to maximize skills. Prefer the smallest portfolio likely to materially improve the intended work or confidence in it. Valid recommendations include removing a skill, narrowing one, relying on documentation or tooling, or making no change.
 
+Suggest multiple ways of deterministically verifying any output of the project, that can be code, documentation etc. For example, for code it can be linters, static analyzers, formatters.
+
 ## Preserve human authority and project state
 
 This is a read-only planning skill. Do not install, create, update, or remove project capabilities; do not edit project files; and do not implement the resulting plan. The human decides what is worth adopting and must approve the portfolio before an implementation plan is finalized.

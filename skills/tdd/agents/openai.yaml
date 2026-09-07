@@ -3,4 +3,4 @@ interface:
   short_description: "Build behavior through red-green cycles"
   default_prompt: "Use $tdd to implement this behavior test-first at the right public seam."
 policy:
-  allow_implicit_invocation: false
+  allow_implicit_invocation: true 

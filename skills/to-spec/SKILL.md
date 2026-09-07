@@ -1,34 +1,27 @@
 ---
 name: to-spec
-description: Use when confirmed feature or module intent must become a concise, durable document before implementation.
+description: Use when confirmed feature or module intent must become an approved spec before implementation.
 ---
 
 # To Spec
 
-Turn confirmed intent and relevant repository evidence into one requested durable feature or module document. Do not create separate context or ADR documents for ordinary work.
+Turn confirmed intent and relevant repository evidence into one spec describing the approved change. Do not create separate context or ADR documents for ordinary work.
 
 Synthesize what is already known; do not restart the interview or create unrelated documents. If an unresolved point would materially affect behavior, scope, or a technical boundary, surface it clearly and hand off to `$grill` only if the human wants to resolve it.
 
 ## Locate the document
 
-First inspect the repository's existing documentation and local conventions.
-
-- Update an existing document that already owns the feature or module.
-- Use a colocated `README.md` when the document explains a directory or module as a whole.
-- Use a colocated `<feature-name>.md` when one feature needs its own product and technical explanation.
-- If no suitable document exists, create the smallest one that covers the feature or module, beside the code it explains.
-
-Do not create a separate global documentation tree, ADR, context document, or duplicate document unless the repository already has a clear convention requiring it. Do not make a `README.md` and feature document repeat the same material; link between them where both scopes genuinely exist.
+Use `specs/<spec-name>/spec.md`, with any tickets under `specs/<spec-name>/tickets/`, unless the human specifies another location. Update the active spec for this change when one exists. Keep planning separate from source READMEs and other documentation of the delivered system.
 
 ## Ground the document in the codebase
 
 Read the relevant code, tests, configuration, and existing docs before writing. Use the project's vocabulary. Prefer established interfaces and test seams over creating new ones without a reason.
 
-State only decisions that are supported by the confirmed intent or repository evidence. Label assumptions, alternatives intentionally rejected, and unresolved questions rather than presenting them as settled facts.
+State only decisions supported by confirmed intent or repository evidence. Preserve consequential decisions, their reasons, assumptions, and alternatives likely to be proposed again; state what would justify reconsidering them. Label unresolved questions rather than presenting them as settled facts.
 
 ## Write the smallest complete document
 
-**REQUIRED SUB-SKILL:** Use `$writing` when drafting or revising the reader-facing feature or module document. Follow this skill for its required product and technical content.
+**REQUIRED SUB-SKILL:** Use `$writing` when drafting or revising the reader-facing spec. Follow this skill for its required product and technical content.
 
 Use only the sections that make the feature understandable. A useful default is:
 
@@ -59,11 +52,15 @@ For a large initiative with distinct independently testable capabilities, record
 
 Present the proposed document or material changes for human confirmation. The confirmation must cover the intended behavior, non-goals, major technical decisions, and verification approach.
 
-Once implementation begins, the document remains current behavior documentation. If the implementation changes a decision, interface, scope, or verification approach, update this same document as part of the work. `$implement` is responsible for making that update when it performs the code change.
+During implementation, obtain human approval for material changes to behavior, scope, major technical decisions, or verification approach, then update this spec and affected tickets. Do not silently rewrite approved intent to match the code. After delivery and human acceptance, mark the spec completed and retain it as history; current system documentation evolves separately.
 
 ## Boundaries
 
 - A short, concrete document is better than a comprehensive document that duplicates the code.
 - Do not publish to an issue tracker or create tickets as a side effect.
 - Do not add requirements, architecture, or future-proof abstractions that were not agreed or evidenced.
-- Do not leave product intent in a separate spec while technical behavior lives elsewhere; keep the durable explanation together.
+- Keep product and technical intent together in the spec. `$implement` carries lasting knowledge into separate system documentation with each delivered increment.
+
+## Vocabulary
+
+Maintain very strict vocabulary for the spec as well as the code, especially don't use jargon. Use words that tightly contains the meaning without ambiguity and make sure to use that consistently.

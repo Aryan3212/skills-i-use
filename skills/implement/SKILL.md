@@ -5,7 +5,9 @@ description: Use when an approved implementation task has clear scope and accept
 
 # Implement
 
-Implement one approved task at a time. Read the task, applicable project instructions, the owning feature or module document when one exists, and the existing code path before editing.
+Implement one approved ticket at a time, or a manageable approved spec directly when the human chooses. Read the ticket and its parent spec (`specs/<spec-name>/spec.md`), applicable project instructions, existing code and tests, and relevant system documentation before editing. For source documentation, read the directory README; if absent, use the nearest ancestor README within the repository. Respect applicable broader constraints; source-file pointers are not required.
+
+Work synchronously through implementation, human review, and authorized shipping before starting another ticket. Do not parallelize or automatically advance unless the human changes this workflow. Make routine implementation choices within approved scope; the human decides material changes to behavior, scope, major design decisions, verification approach, or ticket order. After approval, update the active spec and affected tickets as well as the implementation.
 
 ## Make the smallest complete change
 
@@ -19,11 +21,13 @@ For a non-trivial change, identify whether unfamiliar or high-risk work needs fo
 
 ## Keep durable docs current
 
-Update an existing owning document, or create a colocated durable feature or module document, only when the approved change alters behavior, contracts, operational configuration, or a non-obvious constraint that needs ownership. Do not create documentation for a trivial edit. Describe purpose, important behavior, boundaries, contracts, verification, and durable decisions—not transient paths, code listings, or task checklists.
+With each delivered increment, update the existing owning documentation, or create a colocated README or feature document when needed. Describe the actual system for developers and end users: purpose, business rules, vocabulary, usage, configuration, contracts, limitations, verification, and lasting decisions with their reasons. Keep plans, tickets, and pending behavior in `specs/`; documentation must stand on its own. Do not create docs for trivial edits or copy the whole spec. Split docs by distinct audience, responsibility, or reason to change, not arbitrary length.
+
+Before closing the work, transfer lasting knowledge from the spec into system documentation. After delivery and human acceptance, mark applicable tickets and the fully delivered spec completed and retain them as history; do not maintain completed specs as current documentation.
 
 ## Gather evidence and finish
 
-Run relevant focused tests and repository checks as changes are made. Record commands and results, including checks that could not run and why; never claim completion from an unexecuted command. Do not commit, publish, deploy, or expand scope unless requested.
+Run relevant focused tests and repository checks as changes are made. Record commands and results, including checks that could not run and why; never claim completion from an unexecuted command. Include the ticket and spec references in the review handoff. Do not commit, publish, deploy, or expand scope unless requested; spec or ticket approval alone does not authorize shipping.
 
 ## Boundaries
 
